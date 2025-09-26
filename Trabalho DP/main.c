@@ -39,9 +39,48 @@ int main(int argc, char const *argv[])
                     }
                     goto inicio;
                         break;  
-        //area financeira
+        //area financeira PRONTA
         case 2:
             printf("bem vindo a area financeira\n");
+
+            float salario;
+    float total;
+
+    printf("digite seu salario: \n");
+    scanf("%f", &salario);
+
+    total=salario*12;
+
+    printf("seu salario anual e: %.2f\n", total);
+
+    float dias;
+    float diaria;
+    float totalD;
+
+    printf("digite quantos dias voce trabalhou: \n");
+    scanf("%f", &dias);
+
+    printf("digite o valor da diaria: \n");
+    scanf("%f", &diaria);
+
+    totalD=dias*diaria;
+
+    printf("o total da sua diaria foi: %.2f\n", totalD);
+
+    float dolar;
+    float real;
+    float euro;
+
+    printf("digite o valor em reais: \n");
+    scanf("%f", &real);
+
+    dolar=real/5.37;
+
+    printf("o valor em dolar e: %.2f\n", dolar);
+
+    euro=real/6.26;
+
+    printf("o valor em euro e: %.2f\n", euro);
 
             goto inicio;
                 break;
@@ -94,3 +133,4 @@ int main(int argc, char const *argv[])
         
     return 0;
 }
+
