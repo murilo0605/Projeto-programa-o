@@ -15,8 +15,19 @@ int main(int argc, char const *argv[])
     int escolha, idade;
     float peso, altura, imc;
 
+    /* Variaveis adicionadas SOMENTE para o Modulo 5 (mantidas no topo para nao
+       alterar a estrutura original do seu codigo) */
+    int numero, x, segundosTotais, horas, minutos, segundosRest;
+    float raio, base, alturaRet, areaC, perimetroC, areaR, perimetroR;
+
     //Cadastro PRONTO
-    printf("\n\t\t\t---CADASTRO---\n\t\t\t\n");
+    
+     printf("   _____          _____           _____ _______ _____   ____  \n");
+    printf("  / ____|   /\\   |  __ \\   /\\    / ____|__   __|  __ \\ / __ \\ \n");
+    printf(" | |       /  \\  | |  | | /  \\  | (___    | |  | |__) | |  | |\n");
+    printf(" | |      / /\\ \\ | |  | |/ /\\ \\  \\___ \\   | |  |  _  /| |  | |\n");
+    printf(" | |____ / ____ \\| |__| / ____ \\ ____) |  | |  | | \\ \\| |__| |\n");
+    printf("  \\_____/_/    \\_\\_____/_/    \\_\\_____/   |_|  |_|  \\_\\\\____/ \n\n");
         printf("crie seu login, primeiro digite seu nome de usuario\n");
             scanf("%s", &USU);
 
@@ -48,7 +59,7 @@ int main(int argc, char const *argv[])
                                     printf("usuario ou senha incorretos");
                                     goto fim;
                                 }
-    //posição do goto PRONTO
+    //posicao do goto PRONTO
     inicio:
     //menu principal PRONTO
     printf("\n\t\t\t---MENU PRINCIPAL---\n\t\t\t     1-pessoal\n\t\t\t     2-financeiro\n\t\t\t     3-academico\n\t\t\t     4-utilidades\n\t\t\t     0-sair\n");
@@ -151,9 +162,54 @@ int main(int argc, char const *argv[])
         }
         goto inicio;
             break;
-            //area de utilidades
+            //area de utilidades (Modulo 5 adicionado)
         case 4:
             printf("bem vindo a area utilidades\n");
+
+            // 1) Par ou impar
+            printf("\n-- Par ou Impar --\n");
+            printf("digite um numero inteiro: ");
+            scanf("%i", &numero);
+            if (numero % 2 == 0) printf("%i e PAR\n", numero);
+            else printf("%i e IMPAR\n", numero);
+
+            // 2) Verificar intervalo [10,50]
+            printf("\n-- Intervalo [10,50] --\n");
+            printf("digite um numero inteiro: ");
+            scanf("%i", &x);
+            if (x >= 10 && x <= 50) printf("%i esta no intervalo [10,50]\n", x);
+            else printf("%i NAO esta no intervalo [10,50]\n", x);
+
+            // 3) Area e perimetro: circulo
+            printf("\n-- Circulo --\n");
+            printf("digite o raio do circulo (ex: 2.5): ");
+            scanf("%f", &raio);
+            areaC = 3.14159f * raio * raio;           // area = pi * r^2
+            perimetroC = 2.0f * 3.14159f * raio;     // perimetro (circunferencia) = 2*pi*r
+            printf("Area do circulo: %.2f\n", areaC);
+            printf("Perimetro do circulo: %.2f\n", perimetroC);
+
+            // 4) Area e perimetro: retangulo
+            printf("\n-- Retangulo --\n");
+            printf("digite a base do retangulo (ex: 3.0): ");
+            scanf("%f", &base);
+            printf("digite a altura do retangulo (ex: 1.5): ");
+            scanf("%f", &alturaRet);
+            areaR = base * alturaRet;
+            perimetroR = 2.0f * (base + alturaRet);
+            printf("Area do retangulo: %.2f\n", areaR);
+            printf("Perimetro do retangulo: %.2f\n", perimetroR);
+
+            // 5) Transformar segundos em horas e minutos
+            printf("\n-- Conversao de Segundos --\n");
+            printf("digite a quantidade de segundos (ex: 3665): ");
+            scanf("%i", &segundosTotais);
+            horas = segundosTotais / 3600;
+            minutos = (segundosTotais % 3600) / 60;
+            segundosRest = segundosTotais % 60;
+            printf("%i segundos = %i horas, %i minutos e %i segundos\n",
+                   segundosTotais, horas, minutos, segundosRest);
+
             goto inicio;
                 break;
                 //sair do sistema PRONTA
